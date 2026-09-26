@@ -1,0 +1,61 @@
+<style>
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 1rem}
+.tabs button{font-size:13px;padding:6px 10px}
+.tabs button.on{background:var(--bg-accent);color:var(--text-accent);border-color:var(--border-accent)}
+.day{margin:0 0 1.25rem}
+.day h3{margin:0 0 4px;font-size:16px;font-weight:500}
+.city{font-size:12px;padding:2px 8px;border-radius:var(--radius);margin-left:8px;vertical-align:2px}
+.gz{background:var(--bg-tint-violet);color:var(--text-tint-violet)}
+.sz{background:var(--bg-tint-aqua);color:var(--text-tint-aqua)}
+.hk{background:var(--bg-tint-magenta);color:var(--text-tint-magenta)}
+.stop{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;padding:10px 0;border-top:0.5px solid var(--border)}
+.t{font-size:13px;color:var(--text-secondary)}
+.n{font-size:15px;font-weight:500;margin:0}
+.b{font-size:13px;color:var(--text-secondary);margin:2px 0 0}
+</style>
+<h2 class="sr-only">Eight-day Guangzhou, Shenzhen and Hong Kong family itinerary from 21 to 28 November, one tab per day.</h2>
+<div class="tabs" id="tabs"></div>
+<div class="day" data-l="Sat 21"><h3>Sat 21 Nov<span class="city gz">Guangzhou</span></h3>
+<div class="stop"><div class="t">Morning</div><div><p class="n">Arrive Guangzhou</p><p class="b">Metro Line 3 then Line 1 to Gongyuanqian; check in at Zhonglv Commercial City.</p></div></div>
+<div class="stop"><div class="t">Afternoon</div><div><p class="n">Beijing Road</p><p class="b">Pedestrian street on your doorstep; snacks and early dinner.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Canton Tower</p><p class="b">Line 1 to Tiyu Xilu, then Line 3 to Canton Tower.</p></div></div></div>
+<div class="day" data-l="Sun 22"><h3>Sun 22 Nov<span class="city gz">Guangzhou</span></h3>
+<div class="stop"><div class="t">8:00 AM</div><div><p class="n">Dim sum in Liwan</p><p class="b">Go early to beat the weekend queue.</p></div></div>
+<div class="stop"><div class="t">10:00 AM</div><div><p class="n">Chen Clan Ancestral Hall</p><p class="b">Two stops west on Line 1.</p></div></div>
+<div class="stop"><div class="t">Afternoon</div><div><p class="n">Yongqing Fang and Enning Road</p><p class="b">Line 1 to Changshou Lu; old lanes and street snacks.</p></div></div>
+<div class="stop"><div class="t">Late afternoon</div><div><p class="n">Shamian Island</p><p class="b">Line 1 to Huangsha; colonial-era streets.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Pearl River night cruise</p><p class="b">Board at Tianzi Wharf, a short walk from the hotel.</p></div></div></div>
+<div class="day" data-l="Mon 23"><h3>Mon 23 Nov<span class="city gz">Guangzhou</span></h3>
+<div class="stop"><div class="t">8:30 AM</div><div><p class="n">Head to Panyu</p><p class="b">Line 1 to Tiyu Xilu, then Line 3 to Hanxi Changlong, about 45 min.</p></div></div>
+<div class="stop"><div class="t">9:30 AM</div><div><p class="n">Chimelong Safari Park</p><p class="b">Pandas, koalas, white tigers and the tram through the free-roaming zone.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Chimelong International Circus</p><p class="b">Acrobatic show next door; book ahead. Didi back, about 40 min.</p></div></div></div>
+<div class="day" data-l="Tue 24"><h3>Tue 24 Nov<span class="city gz">Guangzhou</span></h3>
+<div class="stop"><div class="t">Morning</div><div><p class="n">Yuexiu Park and Five Rams</p><p class="b">Two stops north on Line 2; Zhenhai Tower and big green spaces.</p></div></div>
+<div class="stop"><div class="t">Late morning</div><div><p class="n">Nanyue King Mausoleum Museum</p><p class="b">Next to Yuexiu Park; 2,000-year-old tomb with a jade burial suit.</p></div></div>
+<div class="stop"><div class="t">Afternoon</div><div><p class="n">Guangdong Museum</p><p class="b">Near Canton Tower; regional history and Chaozhou woodcarving.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Huifu East Road food street</p><p class="b">Last Guangzhou night: street food near the hotel.</p></div></div></div>
+<div class="day" data-l="Wed 25"><h3>Wed 25 Nov<span class="city sz">Shenzhen</span></h3>
+<div class="stop"><div class="t">Morning</div><div><p class="n">Train to Shenzhen</p><p class="b">Line 2 to Guangzhou South, train to Futian, then Line 2 to Huaqiangbei.</p></div></div>
+<div class="stop"><div class="t">Midday</div><div><p class="n">Check in</p><p class="b">Drop bags at the hotel on Zhenhua Road.</p></div></div>
+<div class="stop"><div class="t">Afternoon</div><div><p class="n">Huaqiangbei</p><p class="b">Short walk from the hotel; malls close around early evening.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Ping An Finance Centre</p><p class="b">Night view from Shenzhen's tallest tower. Fill in new China arrival cards tonight.</p></div></div></div>
+<div class="day" data-l="Thu 26"><h3>Thu 26 Nov<span class="city hk">Hong Kong day trip</span></h3>
+<div class="stop"><div class="t">8:30 AM</div><div><p class="n">High-speed train to West Kowloon</p><p class="b">From Futian station, under 20 min. Both immigration checks are inside West Kowloon station; bring passports.</p></div></div>
+<div class="stop"><div class="t">Morning</div><div><p class="n">West Kowloon Cultural District</p><p class="b">Next to the station; Hong Kong Palace Museum or M+ if you like museums.</p></div></div>
+<div class="stop"><div class="t">Midday</div><div><p class="n">Star Ferry and Victoria Peak</p><p class="b">Cross the harbour to Central, then the Peak Tram up for the classic view.</p></div></div>
+<div class="stop"><div class="t">Afternoon</div><div><p class="n">Mong Kok</p><p class="b">Sneakers Street, markets and street snacks.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Tsim Sha Tsui promenade</p><p class="b">Harbour lights, then the train back to Futian. Book the return in advance and check the last train.</p></div></div></div>
+<div class="day" data-l="Fri 27"><h3>Fri 27 Nov<span class="city sz">Shenzhen</span></h3>
+<div class="stop"><div class="t">10:00 AM</div><div><p class="n">Happy Valley Shenzhen</p><p class="b">Line 2 direct to Window of the World, about 25 min; weekday queues are short.</p></div></div>
+<div class="stop"><div class="t">Evening</div><div><p class="n">Dongmen Pedestrian Street</p><p class="b">Busy shopping street with street food and cheap buys.</p></div></div></div>
+<div class="day" data-l="Sat 28"><h3>Sat 28 Nov<span class="city sz">Shenzhen</span></h3>
+<div class="stop"><div class="t">Morning</div><div><p class="n">Lianhuashan Park</p><p class="b">About 10 min by Didi; view over the Futian skyline.</p></div></div>
+<div class="stop"><div class="t">Midday</div><div><p class="n">Lunch and check out</p><p class="b">Chaoshan beef hotpot or dim sum near the hotel.</p></div></div>
+<div class="stop"><div class="t">Afternoon</div><div><p class="n">Fly home from Shenzhen</p><p class="b">Didi to SZX, 40 to 50 min; allow extra time on a Saturday.</p></div></div></div>
+<script>
+const days=[...document.querySelectorAll('.day')];
+const tabs=document.getElementById('tabs');
+function show(i){days.forEach((d,j)=>d.style.display=j===i?'block':'none');[...tabs.children].forEach((b,j)=>b.classList.toggle('on',j===i));}
+days.forEach((d,i)=>{const b=document.createElement('button');b.textContent=d.dataset.l;b.onclick=()=>show(i);tabs.appendChild(b);});
+show(0);
+</script>
