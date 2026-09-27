@@ -116,8 +116,6 @@ ol.timeline li .rail::after{content:"";position:absolute;left:3px;top:5px;width:
   <nav class="views" role="tablist" aria-label="Sections">
     <button role="tab" id="tab-days" aria-selected="true" aria-controls="view-days">Itinerary</button>
     <button role="tab" id="tab-hotels" aria-selected="false" aria-controls="view-hotels">Hotels</button>
-    <button role="tab" id="tab-near" aria-selected="false" aria-controls="view-near">Nearby</button>
-    <button role="tab" id="tab-check" aria-selected="false" aria-controls="view-check">Checklist</button>
   </nav>
 
   <section id="view-days" role="tabpanel" aria-labelledby="tab-days">
@@ -133,18 +131,7 @@ ol.timeline li .rail::after{content:"";position:absolute;left:3px;top:5px;width:
     <div id="hotels"></div>
   </section>
 
-  <section id="view-near" role="tabpanel" aria-labelledby="tab-near" hidden>
-    <div class="chips" id="nearchips" role="group" aria-label="City"></div>
-    <div id="near"></div>
-  </section>
-
-  <section id="view-check" role="tabpanel" aria-labelledby="tab-check" hidden>
-    <div class="progress"><div class="bar"><i id="barfill"></i></div><span id="count">0 / 0</span></div>
-    <div id="checklist"></div>
-    <button class="reset" id="reset">Clear all ticks</button>
-  </section>
-
-  <p class="foot">Tap "Show in Chinese" on any stop or place to show a taxi driver where you're going. Ticks in the checklist are saved on this device only.</p>
+  <p class="foot">Tap "Show in Chinese" on any stop or hotel to show a taxi driver where you're going.</p>
 </div>
 
 <script>
@@ -224,54 +211,7 @@ const HOTELS=[
 {city:"gz",name:"Crystal Hotel Guangzhou",nights:"4 nights, Sat 21 to Wed 25 Nov",addr:"Zhonglv Commercial City, 219 Zhongshan 5th Road, Yuexiu District",zh:"越秀区中山五路219号",metro:"Gongyuanqian (Lines 1 and 2)",near:"Beijing Road, Huifu East Road, Tianzi Wharf"},
 {city:"sz",name:"Hampton by Hilton",nights:"3 nights, Wed 25 to Sat 28 Nov",addr:"1st Floor, Languang Building, 60 Zhenhua Road, Futian District",zh:"福田区振华路60号",metro:"Huaqiangbei area (Line 2 to Futian station; Line 1 at Huaqiang Road)",near:"Huaqiangbei electronics malls, Zhenhua Road food"}
 ];
-const CHECK=[
-["Documents",["Passports valid 6+ months for all three","China digital arrival card for each person, 24 to 72 hours before 21 Nov","New arrival cards on the night of 25 Nov, for re-entry from Hong Kong","Family travel insurance"]],
-["Bookings",["Canton Tower, sunset slot on 23 Nov","Guangdong Museum time slot, 24 Nov","Guangzhou South to Futian train, 25 Nov","Ping An Finance Centre Free Sky, 25 Nov","Futian and West Kowloon trains both ways, 26 Nov","Check the anime shops are still open: Gundam Base, Bit City, Animate Hong Kong"]],
-["Payments and apps",["Alipay and WeChat Pay verified, YouTrip linked, small test payment done","Big items booked on Trip.com to avoid the 3% fee over 200 CNY","Roaming data or eSIM for each phone","Amap or Apple Maps, Didi, Railway 12306, Trip.com, Dianping, offline translator"]],
-["Packing",["Plug adapter for China (Type A and I)","Light jacket and comfortable walking shoes","Tissue packs and hand sanitiser","Usual medication in original packaging"]]
-];
 
-const NEAR={
-gz:{lead:"Around Crystal Hotel at Gongyuanqian, plus a few easy metro rides away.",items:[
-["See","Dafo Temple","大佛寺","Buddhist temple tucked just off Beijing Road, a few minutes' walk from the hotel."],
-["See","Sacred Heart Cathedral","石室圣心大教堂","Granite Gothic cathedral near Yide Road, about 15 min on foot or a short Didi."],
-["See","Sun Yat-sen Memorial Hall","中山纪念堂","Grand octagonal hall and gardens. One stop north on Line 2 (Jinian Tang)."],
-["See","Guangxiao Temple and Six Banyan Temple","光孝寺","Two of the city's oldest temples, near Ximenkou on Line 1."],
-["Eat","Guangzhou Restaurant, Wenchang Road","广州酒家 文昌路","Classic Cantonese dim sum and banquet dishes in the old town."],
-["Eat","Tao Tao Ju and Lian Xiang Lou","荔湾区第十甫路","Historic dim sum teahouses side by side on Dishifu Road. Go early."],
-["Eat","Nanxin dessert shop","南信牛奶甜品专家","Double-skin milk pudding and ginger milk curd, Dishifu Road."],
-["Eat","Yinji Changfen","银记肠粉","Popular chain for silky rice noodle rolls; branches around the old town."],
-["Eat","Huifu East Road food street","惠福东路美食街","Street of casual Cantonese restaurants and snacks, walking distance from the hotel."],
-["Shop","Beijing Road pedestrian street","北京路步行街","Right outside the hotel: local brands, snacks and souvenirs."],
-["Shop","Shangxiajiu pedestrian street","上下九步行街","Arcaded shopping street in Liwan, Line 1 to Changshou Lu."],
-["Shop","Tianhe Road malls","天河路商圈","Grandview, Tee Mall and Taikoo Hui together. Line 1 to Tiyu Xilu."]]},
-sz:{lead:"Around the Hampton by Hilton in Huaqiangbei, plus places along Metro Line 2.",items:[
-["See","Shenzhen Civic Center and Central Book City","深圳书城中心城","Landmark civic building with a huge bookstore underneath, below Lianhuashan."],
-["See","OCT Loft","华侨城创意文化园","Old factories turned into galleries, cafés and design shops in the OCT area."],
-["See","Splendid China Folk Village","锦绣中华民俗村","Miniature Chinese landmarks and folk performances in the OCT area."],
-["See","Shenzhen Bay Park","深圳湾公园","Long waterfront path with bikes to rent and views to Hong Kong."],
-["See","Sea World, Shekou","海上世界","Harbour dining and shopping around an old cruise ship, end of Line 2."],
-["Eat","Chaoshan beef hotpot","潮汕牛肉火锅","Shenzhen's favourite meal. Bahe Li is a well-known chain."],
-["Eat","Zhenhua Road and Huaqiangbei eateries","华强北","Cheap noodles, dumplings and food courts steps from the hotel."],
-["Eat","New-style tea shops","喜茶 奈雪的茶","HeyTea and Nayuki started here; branches in most malls."],
-["Eat","Shekou seafood","蛇口海鲜","Seafood restaurants around Sea World and the old port."],
-["Shop","Huaqiangbei and SEG Electronics Market","赛格电子市场","Phones, drones, gadgets and parts. Malls close in the early evening."],
-["Shop","Coco Park","COCO Park 购物公园","Big Futian mall with restaurants and bars, near Futian station."],
-["Shop","MixC Shenzhen","万象城","Upmarket mall in Luohu."],
-["Shop","Dongmen Pedestrian Street","东门步行街","Budget fashion and street food."]]},
-hk:{lead:"Along your day-trip route: West Kowloon, Tsim Sha Tsui, Mong Kok and Central.",items:[
-["See","Avenue of Stars","星光大道","Harbourfront promenade in Tsim Sha Tsui, best in the evening."],
-["See","Hong Kong Museum of Art","香港藝術館","On the Tsim Sha Tsui waterfront, next to the Star Ferry pier."],
-["See","Temple Street Night Market","廟街夜市","Evening market with snacks and trinkets in Jordan."],
-["Eat","Tim Ho Wan","添好運","Michelin-recognised dim sum at friendly prices; try the baked barbecue pork buns."],
-["Eat","Australia Dairy Company","澳洲牛奶公司","Famous Jordan café for scrambled egg sandwiches and milk pudding. Expect a quick queue."],
-["Eat","Mak's Noodle","麥奀雲吞麵世家","Classic wonton noodles in Central."],
-["Eat","Tai Cheong Bakery","泰昌餅家","Egg tarts in Central, good for a snack before the Peak Tram."],
-["Eat","Kam's Roast Goose","甘牌燒鵝","Roast goose in Wan Chai, a short MTR ride from Central."],
-["Shop","Harbour City","海港城","Huge mall next to the Star Ferry in Tsim Sha Tsui."],
-["Shop","Sneakers Street","花園街","Fa Yuen Street in Mong Kok, lined with sneaker shops."],
-["Shop","Ladies' Market","女人街","Tung Choi Street stalls for souvenirs and bargains."]]}
-};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function store(get,key,val){try{if(get)return localStorage.getItem(key);localStorage.setItem(key,val)}catch(e){return null}}
@@ -306,31 +246,11 @@ function renderHotels(){
   $("#hotels").querySelectorAll(".zhbtn").forEach(b=>b.addEventListener("click",()=>{const card=b.nextElementSibling;const open=card.hidden;card.hidden=!open;b.setAttribute("aria-expanded",String(open));b.textContent=open?"Hide Chinese":"Show in Chinese";}));
 }
 
-let nearCity="gz";
-function renderNear(){
-  $("#nearchips").innerHTML=Object.keys(NEAR).map(k=>`<button aria-pressed="${k===nearCity}" data-k="${k}" style="--c:${CITY[k].c}">${k==="hk"?"Hong Kong":CITY[k].name}</button>`).join("");
-  $("#nearchips").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{nearCity=b.dataset.k;renderNear();}));
-  const n=NEAR[nearCity],c=CITY[nearCity];
-  const cats=[["See","Things to see"],["Eat","Where to eat"],["Shop","Shopping"]];
-  $("#near").innerHTML=`<p class="nearlead">${esc(n.lead)}</p>`+cats.map(([k,label])=>{const list=n.items.filter(i=>i[0]===k);if(!list.length)return "";
-    return `<div class="cat" style="--c:${c.c};--soft:${c.s}"><h2>${label}</h2>${list.map(i=>`<div class="place"><h3>${esc(i[1])}</h3><p>${esc(i[3])}</p><button class="zhbtn" aria-expanded="false">Show in Chinese</button><div class="zhcard" hidden><div class="zh" lang="${nearCity==="hk"?"zh-Hant":"zh-Hans"}">${esc(i[2])}</div><div class="en">${esc(i[1])}</div></div></div>`).join("")}</div>`}).join("");
-  $("#near").querySelectorAll(".zhbtn").forEach(b=>b.addEventListener("click",()=>{const card=b.nextElementSibling;const open=card.hidden;card.hidden=!open;b.setAttribute("aria-expanded",String(open));b.textContent=open?"Hide Chinese":"Show in Chinese";}));
-}
 
-let ticks={};try{ticks=JSON.parse(store(true,"trip-ticks")||"{}")||{}}catch(e){ticks={}}
-function renderCheck(){
-  let total=0;
-  $("#checklist").innerHTML=CHECK.map(([g,items],gi)=>`<div class="group"><h2>${esc(g)}</h2>${items.map((t,ii)=>{total++;const k=gi+"-"+ii;return `<label><input type="checkbox" data-k="${k}" ${ticks[k]?"checked":""}><span>${esc(t)}</span></label>`}).join("")}</div>`).join("");
-  $("#checklist").querySelectorAll("input").forEach(inp=>inp.addEventListener("change",()=>{ticks[inp.dataset.k]=inp.checked;store(false,"trip-ticks",JSON.stringify(ticks));updateCount(total)}));
-  updateCount(total);
-}
-function updateCount(total){const done=Object.values(ticks).filter(Boolean).length;$("#count").textContent=`${done} / ${total}`;$("#barfill").style.width=(total?Math.round(done/total*100):0)+"%";}
-$("#reset").addEventListener("click",()=>{ticks={};store(false,"trip-ticks","{}");renderCheck();});
-
-const tabs=[["tab-days","view-days"],["tab-hotels","view-hotels"],["tab-near","view-near"],["tab-check","view-check"]];
+const tabs=[["tab-days","view-days"],["tab-hotels","view-hotels"]];
 tabs.forEach(([t,v])=>$("#"+t).addEventListener("click",()=>{tabs.forEach(([t2,v2])=>{$("#"+t2).setAttribute("aria-selected",String(t2===t));$("#"+v2).hidden=t2!==t;});}));
 
-renderTickets();renderDay();renderHotels();renderNear();renderCheck();
+renderTickets();renderDay();renderHotels();
 </script>
 </body>
 </html>
