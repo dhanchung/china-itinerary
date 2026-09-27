@@ -150,69 +150,68 @@ ol.timeline li .rail::after{content:"";position:absolute;left:3px;top:5px;width:
 <script>
 const CITY={gz:{name:"Guangzhou",c:"var(--gz)",s:"var(--gz-soft)"},sz:{name:"Shenzhen",c:"var(--sz)",s:"var(--sz-soft)"},hk:{name:"Hong Kong day trip",c:"var(--hk)",s:"var(--hk-soft)"}};
 const DAYS=[
-{date:"2026-11-21",wd:"Sat",long:"Saturday 21 November",city:"gz",title:"Arrival, Beijing Road and Canton Tower",lead:"An early start after the overnight flight: breakfast and Beijing Road in the morning, a rest in the afternoon, and Canton Tower at night.",stops:[
-["05:30","Land at Guangzhou Baiyun Airport (CAN)","Clear immigration with your arrival cards. Take a Didi to the hotel, about 45 min; the metro only starts running around 6am and takes about 1 hour with a change.","广州白云国际机场"],
+{date:"2026-11-21",wd:"Sat",long:"Saturday 21 November",city:"gz",title:"Arrival, rest and Animation Star City",lead:"An early landing, a slow morning around the hotel, a rest, then the underground anime mall and Beijing Road in the evening.",stops:[
+["05:30","Land at Guangzhou Baiyun Airport (CAN)","Clear immigration with your arrival cards. Take a Didi to the hotel, about 45 min; the metro only starts running around 6am.","广州白云国际机场"],
 ["07:00","Drop bags at Crystal Hotel Guangzhou","Zhonglv Commercial City, 219 Zhongshan 5th Road. Ask for early check-in, or book the night of 20 Nov so the room is ready.","越秀区中山五路219号"],
-["08:00","Dim sum breakfast near the hotel","Morning tea is a Guangzhou ritual, and teahouses open early. Pick one near Beijing Road."],
-["10:00","Beijing Road pedestrian street","Right outside the hotel; most shops open around 10am. Snacks, and the old road layers under glass.","北京路步行街"],
+["08:00","Dim sum breakfast near the hotel","Teahouses open early. Pick one around Beijing Road."],
+["10:00","Beijing Road pedestrian street","Right outside the hotel. Snacks, shops and the ancient road layers under glass.","北京路步行街"],
 ["12:30","Lunch, then check in and rest","A few hours' sleep after the overnight flight keeps everyone going for the evening."],
-["17:30","Early dinner around Beijing Road","Try wonton noodles or roast goose."],
-["19:00","Canton Tower","Line 1 to Tiyu Xilu, then Line 3 to Canton Tower, about 25 min. Book an evening slot online.","广州塔"],
-["21:30","Back to the hotel","Same route back, or Didi."]]},
-{date:"2026-11-22",wd:"Sun",long:"Sunday 22 November",city:"gz",title:"Old town and the Pearl River",lead:"The old-town day, all along Metro Line 1, ending with the river cruise near the hotel.",stops:[
-["08:00","Dim sum breakfast in Liwan","Lian Xiang Lou on Dishifu Road. Line 1 to Changshou Lu. Go early; Sunday queues build fast.","荔湾区第十甫路"],
-["10:00","Chen Clan Ancestral Hall","Line 1 to Chen Jia Ci. Allow 1 to 1.5 hours for the carvings and folk-art rooms.","陈家祠"],
+["16:30","Animation Star City","Underground anime mall at Gongyuanqian station, right by the hotel: Animate merchandise, gachapon rows, figures and acrylic stands.","动漫星城"],
+["18:30","Dinner and evening stroll on Beijing Road","Cantonese snacks, wonton noodles or roast goose."]]},
+{date:"2026-11-22",wd:"Sun",long:"Sunday 22 November",city:"gz",title:"Old town and the Pearl River",lead:"The old-town day, all along Metro Line 1, ending with Shamian at dusk and the river cruise near the hotel.",stops:[
+["08:00","Dim sum breakfast in Liwan","Lian Xiang Lou on Dishifu Road. Line 1 to Changshou Lu. Go early; Sunday queues build fast.","莲香楼 第十甫路"],
+["10:00","Chen Clan Ancestral Hall","Line 1 to Chen Jia Ci. Lingnan wood carving and stone sculpture; allow 1 to 1.5 hours.","陈家祠"],
 ["12:30","Yongqing Fang and Enning Road","Line 1 to Changshou Lu. Lunch on street snacks: rice noodle rolls, then double-skin milk at Nanxin.","永庆坊"],
-["15:30","Shamian Island","Line 1 to Huangsha. Colonial-era streets under big banyan trees.","沙面"],
+["16:00","Shamian Island","Line 1 to Huangsha. Colonial-era streets; stay as the buildings light up at dusk.","沙面"],
 ["18:00","Dinner","Around Shamian or back near Beijing Road."],
 ["19:30","Pearl River night cruise","Board at Tianzi Wharf, about a 10 to 15 min walk from the hotel. Cruises run about an hour.","天字码头"]]},
-{date:"2026-11-23",wd:"Mon",long:"Monday 23 November",city:"gz",title:"Food and malls in Tianhe",lead:"A relaxed eating and shopping day: Tianhe's big malls in the morning, Zhujiang New Town in the afternoon, and a classic Cantonese dinner in the old town.",stops:[
-["09:00","Dim sum breakfast near the hotel","Take it slow after a busy Sunday. Try a teahouse around Beijing Road."],
-["10:30","Tianhe Road malls","Line 1 direct from Gongyuanqian to Tiyu Xilu, about 15 min. Grandview Mall, Tee Mall and Taikoo Hui are all connected by walkways. Grandview also has an indoor aquarium.","天河路商圈"],
-["13:00","Lunch in Tianhe","Food courts in Grandview or Tee Mall, or Cantonese at a Bingsheng branch nearby.","炳胜"],
-["15:00","Parc Central and K11","Short walk or Line 3 to Zhujiang New Town. Stylish malls with cafés and dessert shops.","天环广场"],
-["17:30","Back to the hotel","Line 1 back to Gongyuanqian. Drop off bags and rest."],
-["19:00","Dinner at Tao Tao Ju, Dishifu Road","Line 1 to Changshou Lu. The century-old flagship teahouse: dim sum and Cantonese dishes. Take a queue number at the door when you arrive.","陶陶居 第十甫路"],
-["20:30","Shangxiajiu pedestrian street","A short walk from the restaurant. Evening snacks and shops before heading back.","上下九步行街"]]},
-{date:"2026-11-24",wd:"Tue",long:"Tuesday 24 November",city:"gz",title:"Yuexiu, museums and a food street",lead:"History in the morning, the Guangdong Museum in the afternoon, and a last Guangzhou dinner near the hotel.",stops:[
+{date:"2026-11-23",wd:"Mon",long:"Monday 23 November",city:"gz",title:"Five Rams, Tianhe malls and Canton Tower",lead:"Yuexiu Park in the morning, anime and character stores in Tianhe, sunset from Canton Tower, then dinner at Tao Tao Ju.",stops:[
 ["09:00","Yuexiu Park and the Five Rams statue","Line 2 to Yuexiu Park, two stops. Zhenhai Tower and big green spaces.","越秀公园"],
-["11:00","Nanyue King Mausoleum Museum","Short walk from the park. A 2,000-year-old tomb with a jade burial suit.","南越王博物院"],
-["12:30","Lunch","Around Yuexiu Park or back near the hotel."],
-["14:00","Guangdong Museum","Near Canton Tower, about 30 min by metro or Didi. Reserve a time slot with your passports.","广东省博物馆"],
-["17:30","Back to the hotel","Rest before dinner."],
-["19:00","Huifu East Road food street","Walking distance from the hotel. Casual Cantonese dishes and snacks.","惠福东路美食街"]]},
-{date:"2026-11-25",wd:"Wed",long:"Wednesday 25 November",city:"sz",title:"To Shenzhen: Huaqiangbei and Ping An",lead:"A morning train to Shenzhen, the electronics markets next to the hotel, and the city's best night view.",stops:[
+["11:30","Grandview Mall, Tianhe","Line 2 back to Gongyuanqian, then Line 1 to Tiyu Xilu. Look for the Gundam Base and character stores (Sanrio, Pokémon, Bandai); check they're still open before you go. Grandview also has an indoor aquarium.","正佳广场"],
+["13:00","Lunch in Tianhe","Food courts in Grandview or Tee Mall, or Cantonese at a Bingsheng branch nearby."],
+["14:30","Tee Mall and Taikoo Hui","Connected to Grandview by walkways."],
+["16:30","Canton Tower at sunset","Line 3 from Tiyu Xilu to Canton Tower. Sunset is around 5:40pm; book a late-afternoon slot and stay for the lights.","广州塔"],
+["19:15","Dinner at Tao Tao Ju, Dishifu Road","Line 3 to Tiyu Xilu, then Line 1 to Changshou Lu, about 35 min. Take a queue number at the door when you arrive.","陶陶居 第十甫路"],
+["20:45","Shangxiajiu pedestrian street","A short walk from the restaurant. Evening snacks, then Line 1 back to the hotel.","上下九步行街"]]},
+{date:"2026-11-24",wd:"Tue",long:"Tuesday 24 November",city:"gz",title:"Dongshankou, museum and last shopping",lead:"Red-brick lanes and cafés, the Guangdong Museum, a last round of anime shopping, and dinner near the hotel.",stops:[
+["09:30","Dongshankou","Line 1 three stops east to Dongshankou. Red-brick villas, lifestyle cafés and small art spaces.","东山口"],
+["12:00","Lunch in Dongshankou","Plenty of cafés and casual restaurants in the lanes."],
+["14:00","Guangdong Museum","Line 1 to Tiyu Xilu, then Line 3 one stop to Zhujiang New Town and a short walk. Reserve a time slot with your passports.","广东省博物馆"],
+["17:00","Animation Star City or Beijing Road","Back at Gongyuanqian for last gachapon and merchandise.","动漫星城"],
+["19:00","Huifu East Road food street","Walking distance from the hotel. Pack tonight for the morning train.","惠福东路美食街"]]},
+{date:"2026-11-25",wd:"Wed",long:"Wednesday 25 November",city:"sz",title:"To Shenzhen: Huaqiangbei, Bit City and Ping An",lead:"A morning train to Shenzhen, the electronics markets, the underground anime passage, and the city's best night view.",stops:[
 ["08:30","Check out","Line 2 direct from Gongyuanqian to Guangzhou South station, about 40 min.","广州南站"],
-["10:00","High-speed train to Shenzhen Futian","About 30 to 40 min. Book on Railway 12306 or Trip.com; tickets open about 15 days ahead.","深圳福田站"],
-["11:00","To the hotel","Line 2 from Futian a few stops to Huaqiangbei, or Didi about 10 min. Drop bags at the Hampton by Hilton, 60 Zhenhua Road.","福田区振华路60号"],
+["10:00","High-speed train to Shenzhen Futian","About 35 min. Book on Railway 12306 or Trip.com; tickets open about 15 days ahead.","深圳福田站"],
+["11:00","To the Hampton by Hilton","Line 2 from Futian a few stops to Huaqiangbei, or Didi about 10 min. Drop bags at 60 Zhenhua Road.","福田区振华路60号"],
 ["12:00","Lunch","Plenty of cheap eats around Zhenhua Road."],
 ["13:30","Huaqiangbei electronics malls","Short walk from the hotel. Phones, drones, gadgets and parts. Malls close around early evening.","华强北"],
-["18:00","Dinner near the hotel","Try Chaoshan beef hotpot."],
-["19:30","Ping An Finance Centre Free Sky","Short Didi or Line 2. Book online for the evening.","平安金融中心"],
+["16:30","Bit City","Anime-themed underground passage at Convention and Exhibition Center station: claw machines, anime cafés and merchandise. Check it's open before you go.","次元小镇"],
+["18:00","Dinner at Coco Park","One stop on to Shopping Park station. Try Chaoshan beef hotpot.","COCO Park 购物公园"],
+["20:00","Ping An Finance Centre Free Sky","Short walk or Didi from Coco Park. Book online and check the last entry time.","平安金融中心"],
 ["22:00","Fill in China arrival cards","One each, for re-entering from Hong Kong tomorrow."]]},
-{date:"2026-11-26",wd:"Thu",long:"Thursday 26 November",city:"hk",title:"Hong Kong day trip",lead:"The high-speed train makes Hong Kong an easy day out. Bring everyone's physical passports.",stops:[
+{date:"2026-11-26",wd:"Thu",long:"Thursday 26 November",city:"hk",title:"Hong Kong: the Peak, then Mong Kok",lead:"Sights in the morning while it's quiet, Mong Kok's collector malls in the afternoon once the shops open. Bring everyone's physical passports.",stops:[
 ["08:00","Leave the hotel","Line 2 or Didi to Futian station.","深圳福田站"],
-["08:30","High-speed train to Hong Kong West Kowloon","Under 20 min. Hong Kong and mainland immigration are both done inside West Kowloon station.","香港西九龙站"],
-["09:30","West Kowloon Cultural District","Next to the station. Hong Kong Palace Museum or M+ if you like museums, plus harbour views.","西九文化区"],
-["12:00","Star Ferry to Central","From Tsim Sha Tsui across the harbour. Lunch in Central.","天星小轮"],
-["14:00","Peak Tram to Victoria Peak","The classic view over the harbour. Queues are shorter on weekdays.","山顶缆车"],
-["16:30","Mong Kok","Sneakers Street, the markets and street snacks.","旺角"],
-["19:30","Tsim Sha Tsui promenade","Harbour lights at night. Dinner nearby.","尖沙咀海滨长廊"],
-["21:00","Train back to Futian","Book the return in advance and check the last train time.","香港西九龙站"]]},
-{date:"2026-11-27",wd:"Fri",long:"Friday 27 November",city:"sz",title:"Street food and shopping malls",lead:"A relaxed shopping day along Metro Line 1: an upmarket mall, a street-food lunch at Dongmen, and Coco Park in the evening.",stops:[
-["10:00","Leave the hotel","Line 1 from Huaqiang Road two stops east to Grand Theatre, about 10 min.","大剧院站"],
-["10:30","MixC Shenzhen","Upmarket mall with big international brands, a food hall and an ice rink.","万象城"],
-["12:30","Street-food lunch at Dongmen","One stop further on Line 1 to Laojie. Grilled skewers, rice rolls, fried snacks and bubble tea.","东门步行街"],
-["13:30","Dongmen Pedestrian Street","Budget fashion, shoes and small shops. Bargain at the stalls; malls have fixed prices.","东门步行街"],
-["15:30","Back to the hotel","Drop off shopping bags and rest.","福田区振华路60号"],
-["17:30","Coco Park","Line 1 west to Shopping Park station. Big Futian mall with restaurants and bars.","COCO Park 购物公园"],
-["18:30","Dinner at Coco Park","Try Chaoshan beef hotpot, or pick from the restaurants around the mall."],
-["20:30","Night snacks on Zhenhua Road","Back near the hotel for a last stroll through the Huaqiangbei food stalls.","华强北"]]},
+["08:30","High-speed train to Hong Kong West Kowloon","About 15 to 20 min. Both immigration checks are done inside West Kowloon station.","香港西九龙站"],
+["09:30","Star Ferry to Central","Taxi about 10 min from West Kowloon to the Tsim Sha Tsui pier, then cross the harbour.","天星小輪"],
+["10:30","Peak Tram to Victoria Peak","Morning queues are shorter and the view is often clearer.","山頂纜車"],
+["12:30","Lunch in Central","Wonton noodles at Mak's Noodle, and egg tarts at Tai Cheong Bakery.","麥奀雲吞麵世家"],
+["14:00","MTR to Mong Kok","Tsuen Wan line direct from Central, about 15 min.","旺角"],
+["14:30","Sino Centre and nearby collector malls","Figures, consignment display boxes, manga and manhwa. Also look for Animate and CTMA Centre nearby; check locations and hours before you go.","信和中心"],
+["17:00","Sneakers Street and Ladies' Market","Fa Yuen Street sneakers and Tung Choi Street stalls.","花園街"],
+["18:30","Dinner in Mong Kok or Tsim Sha Tsui","Try Australia Dairy Company in Jordan on the way."],
+["20:30","Train back to Futian","Taxi to West Kowloon station. Book the return in advance and check the last train time.","香港西九龍站"]]},
+{date:"2026-11-27",wd:"Fri",long:"Friday 27 November",city:"sz",title:"Dongmen comics, street food and Shenzhen Bay",lead:"Anime and card shops at Dongmen in the morning, a street-food lunch, a rest, then Shenzhen Bay before sunset and seafood in Shekou.",stops:[
+["10:30","Dongmen Comic City","Line 1 two stops east to Laojie (or Line 3 to Shaibu). Figure shops, Pokémon card lounges and local cosplayers. Shops open around late morning.","东门步行街"],
+["12:30","Street-food lunch at Dongmen","Grilled skewers, rice rolls, fried snacks and bubble tea."],
+["13:30","Dongmen Pedestrian Street","Budget fashion, shoes and small shops. Bargain at the stalls.","东门步行街"],
+["15:00","Back to the hotel","Drop off shopping bags and rest.","福田区振华路60号"],
+["16:30","Shenzhen Bay Park","About 30 min by Didi. Walk the waterfront before sunset, with views across to Hong Kong.","深圳湾公园"],
+["18:30","Seafood dinner in Shekou","Short Didi to Sea World for harbour-side seafood, then back to the hotel.","海上世界"]]},
 {date:"2026-11-28",wd:"Sat",long:"Saturday 28 November",city:"sz",title:"Fly home",lead:"An early start for a 1pm flight: a quick breakfast and an optional park visit, then leave for the airport by 09:30.",stops:[
 ["07:00","Quick breakfast near the hotel","Congee or dim sum around Zhenhua Road. Pack bags the night before."],
 ["07:45","Lianhuashan Park (optional)","About 10 min by Didi. A short climb gives the view over Futian. Skip it if everyone's tired.","莲花山公园"],
 ["09:00","Back to the hotel and check out","Settle any deposit and collect your bags.","福田区振华路60号"],
-["09:30","Didi to Shenzhen Bao'an Airport (SZX)","40 to 50 min; leave extra time for Saturday traffic.","深圳宝安国际机场"],
+["09:30","To Shenzhen Bao'an Airport (SZX)","Didi 40 to 50 min, easiest with luggage. Metro Line 11 also runs to the airport in about 40 min.","深圳宝安国际机场"],
 ["10:30","Check in for the flight to Singapore","Aim to be at the airport about 2.5 hours before departure."],
 ["13:00","Fly home","Have lunch airside after security."]]}
 ];
@@ -222,7 +221,7 @@ const HOTELS=[
 ];
 const CHECK=[
 ["Documents",["Passports valid 6+ months for all three","China digital arrival card for each person, 24 to 72 hours before 21 Nov","New arrival cards on the night of 25 Nov, for re-entry from Hong Kong","Family travel insurance"]],
-["Bookings",["Canton Tower, evening of 21 Nov","Guangdong Museum time slot, 24 Nov","Guangzhou South to Futian train, 25 Nov","Ping An Finance Centre Free Sky, 25 Nov","Futian and West Kowloon trains both ways, 26 Nov"]],
+["Bookings",["Canton Tower, sunset slot on 23 Nov","Guangdong Museum time slot, 24 Nov","Guangzhou South to Futian train, 25 Nov","Ping An Finance Centre Free Sky, 25 Nov","Futian and West Kowloon trains both ways, 26 Nov","Check the anime shops are still open: Gundam Base, Bit City, Animate Hong Kong"]],
 ["Payments and apps",["Alipay and WeChat Pay verified, YouTrip linked, small test payment done","Big items booked on Trip.com to avoid the 3% fee over 200 CNY","Roaming data or eSIM for each phone","Amap or Apple Maps, Didi, Railway 12306, Trip.com, Dianping, offline translator"]],
 ["Packing",["Plug adapter for China (Type A and I)","Light jacket and comfortable walking shoes","Tissue packs and hand sanitiser","Usual medication in original packaging"]]
 ];
